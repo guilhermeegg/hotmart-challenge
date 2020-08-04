@@ -1,3 +1,6 @@
+## Versão
+1.1.0
+
 ## Contextualização
 
 Imagine que você é desenvolvedor de uma empresa de tecnologia e sua nova tarefa é construir uma parte de um marketplace de produtos cujo o número de acesso é alto.
@@ -31,9 +34,12 @@ Sua tarefa consiste em:
 - Todos os serviços devem ser auditados.
 
 ## Observações:
--   Para buscar a quantidade de notícias de uma determinada categoria você pode utilizar a api https://newsapi.org/ . As notícias podem ser (D-1), ou seja, do dia anterior a data corrente do sistema.
+-   Para buscar a quantidade de notícias de uma determinada categoria você pode utilizar a api https://newsapi.org/ .
 Criar o mapeamento das entidades para atender ao cenário criado.
 Crie uma carga inicial para as entidades.
+
+- Considere consumir o endpoint https://newsapi.org/docs/endpoints/top-headlines 4 vezes ao dia (pode usar a estratégia que achar melhor), armazenar a informação no banco local e usar a data de publicação da notícia para fazer a lógica requerida.
+
 	
 ## O que nós esperamos do seu teste
 - Queremos entender sua proficiência técnica, raciocínio analítico (dê preferência para commits curtos e explicativos) e apresentação de resultados. 
