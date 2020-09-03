@@ -97,7 +97,7 @@ Mais especificamente na entrega do projeto gostaríamos de ver:
 2. Análise automatizada de código (Ex.: ESLint);
 3. Utilização das APIs nativas do browser;
 4. Otimização do tamanho final do seu build.
-5. Que o código esteja todo em inglês
+5. Que o todo o código esteja em inglês
 
 
 ### **O que nós não gostaríamos**
