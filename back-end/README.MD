@@ -66,7 +66,7 @@ Crie uma carga inicial para as entidades.
 - Utilização de ferramenta para versionamento dos scripts de carga
 - Arquitetura da solução, utilização de design patterns adequados e orientação a objetos
 - Colocar segurança nos endpoints que persistem dados. (Pode usar usuário/senha em memória)
-- Que o todo código esteja em inglês
+- Que todo o código esteja em inglês
 
 
 ## O que nós não gostaríamos
