@@ -1,5 +1,5 @@
 ## Versão
-1.1.0
+1.2.0
 
 ## Contextualização
 
@@ -61,11 +61,12 @@ Crie uma carga inicial para as entidades.
 - Cache - pesquise alguma biblioteca de cache para tornar a busca mais rápida
 - Suporte a paginação na listagem dos produtos
 - Conteinerização do projeto - Docker
-- Estratégia para evitar o consumo excessivo da api de notícias.
-- Testes automatizados além do unitário.
+- Estratégia para evitar o consumo excessivo da api de notícias
+- Testes automatizados além do unitário
 - Utilização de ferramenta para versionamento dos scripts de carga
 - Arquitetura da solução, utilização de design patterns adequados e orientação a objetos
 - Colocar segurança nos endpoints que persistem dados. (Pode usar usuário/senha em memória)
+- Que todo o código esteja em inglês
 
 
 ## O que nós não gostaríamos
