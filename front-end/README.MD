@@ -57,11 +57,15 @@ Implementar apenas a opção "Adicionar Despesa"
 *   Adicionar despesa
 ![Alt text](assets/images/despesa.jpeg?raw=true "Adicionar Despesa")
 
+Obs.: Após selecionar a moeda, dois novos campos deverão ser solicitados: "Valor total da nota/cupom" e "Valor a ser considerado"
+
 Estrutura do body
 ```javascript
 {
    expenseTypeCode: 'hotel-fee', // 'hotel-fee', 'food' or 'transport'
    currencyCode: 'BRL',  // 'BRL', 'USD' or 'MXN'
+   amountSpent: 13.00, // Valor a ser considerado
+   amountTotal: 71.00, // Valor total da nota/cupom
    notes: 'Descrição da despesa',
    resourceUrl: file // Arquivo do comprovante,
    cardDate: 1585710000000 // Timestamp da data
