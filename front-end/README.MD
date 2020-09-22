@@ -57,6 +57,17 @@ Implementar apenas a opção "Adicionar Despesa"
 *   Adicionar despesa
 ![Alt text](assets/images/despesa.jpeg?raw=true "Adicionar Despesa")
 
+Estrutura do body
+```javascript
+{
+   expenseTypeCode: 'hotel-fee', // 'hotel-fee', 'food' or 'transport'
+   currencyCode: 'BRL',  // 'BRL', 'USD' or 'MXN'
+   notes: 'Descrição da despesa',
+   resourceUrl: file // Arquivo do comprovante,
+   cardDate: 1585710000000 // Timestamp da data
+}
+```
+
 Obs.: O [endpoint](#endpoints) associado irá retornar um json da despesa. Essa API é _databaseless_, portanto, não irá retornar em outro momento os dados enviados.
 
 
