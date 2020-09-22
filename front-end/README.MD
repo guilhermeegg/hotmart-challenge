@@ -35,7 +35,7 @@ Sua tarefa consiste em montar e integrar com a API as seguintes estruturas da p�
 ![Alt text](assets/images/timeline.jpeg?raw=true "Timeline")
 
 *   Criar uma timeline de itens (somente listagem, sem interação)
-    *   Cada tipo de item deve apresentar um layout específico;
+    *   Cada tipo de item deve exibir um ícone de identifição diferente
     *	Itens do tipo EVALUATION devem ser tratados como o item de Aprovação na imagem anterior;
     *	Itens do tipo ACCOUNTABILITY_SUBMITTED e ACCOUNTABILITY_CREATED devem ser tratados como o item de Solicitação na imagem anterior;
     *	Itens do tipo EXPENSE devem ser tratados como o item Hotel na imagem a seguir
