@@ -34,52 +34,37 @@ Sua tarefa consiste em montar e integrar com a API as seguintes estruturas da p�
 
 ![Alt text](assets/images/timeline.jpeg?raw=true "Timeline")
 
-*   Criar uma timeline de itens
-    *   Cada tipo de item deve apresentar um layout específico. \
-
+*   Criar uma timeline de itens (somente listagem, sem interação)
+    *   Cada tipo de item deve apresentar um layout específico;
+    *	Itens do tipo EVALUATION devem ser tratados como o item de Aprovação na imagem anterior;
+    *	Itens do tipo ACCOUNTABILITY_SUBMITTED e ACCOUNTABILITY_CREATED devem ser tratados como o item de Solicitação na imagem anterior;
+    *	Itens do tipo EXPENSE devem ser tratados como o item Hotel na imagem a seguir
 
 ![Alt text](assets/images/item.jpeg?raw=true "Item")
-![Alt text](assets/images/item-detail.jpeg?raw=true "Item Detail")
 
-*   Despesa: Alimentação, Viagem, etc..
-    *   É editável
-    *   É possível visualizar e baixar anexos
-
-3. Rodapé
-
-![Alt text](assets/images/rodape.jpeg?raw=true "Rodapé")
-
-
-*   Ações disponíveis: Cancelar e Aprovar
-*   Status: Aberto, Em Aprovação e Concluído
-
-4. Sidebar
+3. Sidebar
 
 ![Alt text](assets/images/sidebar.jpeg?raw=true "Sidebar")
 
 *   Exibir o status da solicitação
 *   Exibir a lista de moedas envolvidas (Todas as moedas que tem alguma despesa)
 
-5. Ações
+4. Ações
+Implementar apenas a opção "Adicionar Despesa"
 
-*   Baixar todos os anexos das despesas
 ![Alt text](assets/images/barra-acoes.jpeg?raw=true "Barra Ações")
 
 *   Adicionar despesa
 ![Alt text](assets/images/despesa.jpeg?raw=true "Adicionar Despesa")
-	
+
+Obs.: O [endpoint](#endpoints) associado irá retornar um json da despesa. Essa API é _databaseless_, portanto, não irá retornar em outro momento os dados enviados.
 
 
 ### **O que nós esperamos do seu desafio**
 
-Queremos entender sua proficiência técnica, raciocínio analítico e apresentação de resultados. 
-
-Você precisará fazer **apenas** **3 partes** à sua escolha. Se decidir fazer as 5, entenda que isso não irá adicionar vantagem em sua avaliação. Queremos ter uma clara percepção sobre como você resolve problemas e não quantos problemas você consegue resolver.
-
-Para isso fique a vontade para incluir/alterar/remover o que sentir necessidade para atender melhor a demanda.
+Queremos entender sua proficiência técnica, raciocínio analítico e apresentação de resultados. Para isso fique a vontade para incluir/alterar/remover o que sentir necessidade para atender melhor a demanda.
 
 Mais especificamente na entrega do projeto gostaríamos de ver:
-
 
 
 1. Documentação básica para executá-lo;
@@ -129,6 +114,7 @@ Mais especificamente na entrega do projeto gostaríamos de ver:
 * Dados do Header: `https://api-front-end-challenge.buildstaging.com/api/header`
 * Dados da Timeline: `https://api-front-end-challenge.buildstaging.com/api/timeline`
 * Dados da Sidebar: `https://api-front-end-challenge.buildstaging.com/api/sidebar`
+* Adicionar Despesa: `https://api-front-end-challenge.buildstaging.com/api/expense/add`
 
 ### **Layout**
 
