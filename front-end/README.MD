@@ -67,7 +67,7 @@ Estrutura do body
    amountSpent: 13.00, // Valor a ser considerado
    amountTotal: 71.00, // Valor total da nota/cupom
    notes: 'Descrição da despesa',
-   resourceUrl: file // Arquivo do comprovante,
+   resourceUrl: file, // Arquivo do comprovante (Tamanho máximo: 1MB)
    cardDate: 1585710000000 // Timestamp da data
 }
 ```
