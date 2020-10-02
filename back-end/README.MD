@@ -1,5 +1,5 @@
 ## Versão
-1.2.0
+1.2.1
 
 ## Contextualização
 
@@ -19,9 +19,9 @@ Uma das partes mais importante para o marketplace que está sendo construído se
 
  	X = Média de avaliação do produto nos últimos 12 meses
 	Y = Quantidade de vendas/dias que o produto existe
-    Z = Quantidade de notícias da categoria do produto no dia corrente
+        Z = Quantidade de notícias da categoria do produto no dia corrente
 
-Score = X + Y + X
+Score = X + Y + Z
 
 ## O desafio
 
