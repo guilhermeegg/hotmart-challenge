@@ -87,6 +87,7 @@ Mais especificamente na entrega do projeto gostaríamos de ver:
 3. Uma boa estruturação do projeto;
 4. Utilização das ferramentas adequadas;
 5. Utilização correta da API.
+6. Projeto versionado com Git
 
 
 ### **O que nós ficaríamos felizes de ver em seu desafio**
@@ -98,7 +99,7 @@ Mais especificamente na entrega do projeto gostaríamos de ver:
 3. Utilização das APIs nativas do browser;
 4. Otimização do tamanho final do seu build.
 5. Que todo o código esteja em inglês
-
+6. Commits bem organizados
 
 ### **O que nós não gostaríamos**
 
@@ -107,6 +108,7 @@ Mais especificamente na entrega do projeto gostaríamos de ver:
 *   Descobrir que não foi você quem fez seu teste;
 *   Não atendimento aos objetivos propostos;
 *   Ver um código muito ilegível.
+*   Projeto não versionado
 
 ## 
 **O que avaliaremos em seu desafio**
