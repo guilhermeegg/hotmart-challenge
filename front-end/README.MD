@@ -28,7 +28,7 @@ Sua tarefa consiste em montar e integrar com a API as seguintes estruturas da p�
     *   Data
     *   Quantidade de pessoas
     *   Flag - café da manhã
-*   Permitir Atribuição de Analista
+*   Permitir Atribuição de Analista ( Se sinta livre para montar à atribuição do Analista. Seja usando Select, Autocomplete ou campo aberto )
 
 2. Timeline
 
@@ -85,9 +85,10 @@ Mais especificamente na entrega do projeto gostaríamos de ver:
 1. Documentação básica para executá-lo;
 2. Código escrito da maneira mais legível possível. _Manutenção importa tanto quanto performance, muitas vezes um não precisa comprometer o outro_;
 3. Uma boa estruturação do projeto;
-4. Utilização das ferramentas adequadas;
-5. Utilização correta da API.
-6. Projeto versionado com Git
+4. Projeto responsivo com targets bem definidos;
+5. Utilização das ferramentas adequadas;
+6. Utilização correta da API.
+7. Projeto versionado com Git.
 
 
 ### **O que nós ficaríamos felizes de ver em seu desafio**
