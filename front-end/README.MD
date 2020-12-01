@@ -28,7 +28,7 @@ Sua tarefa consiste em montar e integrar com a API as seguintes estruturas da p�
     *   Data
     *   Quantidade de pessoas
     *   Flag - café da manhã
-*   Permitir Atribuição de Analista
+*   Permitir Atribuição de Analista ( Se sinta livre para montar à atribuição do Analista. Seja usando Select, Autocomplete ou campo aberto )
 
 2. Timeline
 
