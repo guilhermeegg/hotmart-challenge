@@ -6,9 +6,9 @@
 * Spring Boot
 * library lombok https://projectlombok.org/
 * H2
+* Liquibase
 
-
-## Banco de dados H2
-Optei por utilizar um banco de dados em mémoria através do H2
+## Banco de dados
+Optei por utilizar um banco de dados em mémoria através do H2 e o Liquibase para controle de versão e carga dos scripts
 As configurações estão no arquivo do projeto resources/application.properties
-Para acessar o console basta utilizar a url  http://<host>:<porta>/h2/ -EX: http://localhost:8080/h2/ 
+Para acessar o console do H2 basta utilizar a url  http://<host>:<porta>/h2/ -EX: http://localhost:8080/h2/ 

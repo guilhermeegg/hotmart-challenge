@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: scripts/V01_schema_inicial.sql
+      relativeToChangelogFile: true
