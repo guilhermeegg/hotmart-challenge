@@ -1,4 +1,4 @@
-package com.hotmart.challenge.api;
+package com.hotmart.challenge;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
