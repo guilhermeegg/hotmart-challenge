@@ -39,7 +39,7 @@ class CategoriaRepositoryTest {
 	private CategoriaRepository categoriaRepository;
 
 	@BeforeAll
-	public void setUp() {
+	void setUp() {
 		categoria = new CategoriaEntity();
 		categoria.setNome(NOME_TESTE);
 	}

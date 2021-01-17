@@ -26,18 +26,18 @@ import com.hotmart.challenge.domain.model.entity.CategoriaEntity;
  */
 @SpringBootTest
 @TestInstance(Lifecycle.PER_CLASS)
-public class CategoriaBeanValidationTest {
+class CategoriaBeanValidationTest {
 
 	private Validator validator;
 
 	@BeforeAll
-	private void setUp() {
+	void setUp() {
 		validator = Validation.buildDefaultValidatorFactory().getValidator();
 	}
 
 	@Test
 	@DisplayName("Teste- falha bean validation da categoria")
-	public void testarFalhaValidacaoCategoria() {
+	void testarFalhaValidacaoCategoria() {
 		CategoriaEntity categoria = new CategoriaEntity();
 		Set<ConstraintViolation<CategoriaEntity>> violations = validator.validate(categoria);
 		assertFalse(violations.isEmpty());
@@ -45,7 +45,7 @@ public class CategoriaBeanValidationTest {
 
 	@Test
 	@DisplayName("Teste- sucesso bean validation da categoria")
-	public void testarSucessoValidacaoCategoria() {
+	void testarSucessoValidacaoCategoria() {
 		CategoriaEntity categoria = new CategoriaEntity(0L, "Categoria Teste");
 		Set<ConstraintViolation<CategoriaEntity>> violations = validator.validate(categoria);
 		assertTrue(violations.isEmpty());
