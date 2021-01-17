@@ -16,14 +16,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-
 @Entity
 @Table(name = "TBCATEGORIA")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class CategoriaEntity implements Serializable{
+public class CategoriaEntity implements Serializable {
 
 	private static final long serialVersionUID = 3148371629917712255L;
 
@@ -31,9 +30,9 @@ public class CategoriaEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
-	
+
 	@NotNull
-	@Size(max = 50)
+	@Size(max = 100)
 	@Column(name = "NOME")
 	private String nome;
 
