@@ -1,4 +1,4 @@
-package com.hotmart.challenge.api;
+package com.hotmart.challenge;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
