@@ -1,4 +1,7 @@
 databaseChangeLog:
   - include:
       file: scripts/V01_schema_inicial.sql
+      relativeToChangelogFile: true      
+  - include:
+      file: scripts/V02_insert_tbcategoria.sql
       relativeToChangelogFile: true
