@@ -8,3 +8,9 @@ databaseChangeLog:
   - include:
       file: scripts/V03_insert_tbproduto.sql
       relativeToChangelogFile: true
+  - include:
+      file: scripts/V04_insert_tbcomprador.sql
+      relativeToChangelogFile: true
+  - include:
+      file: scripts/V05_insert_tbvendedor.sql
+      relativeToChangelogFile: true
