@@ -10,6 +10,7 @@
 * Java Bean Validation
 * Spring Data JPA
 * JUnit
+* library modelmapper http://modelmapper.org/
 
 ## Banco de dados
 Optei por utilizar um banco de dados em mémoria através do H2 e o Liquibase para controle de versão e carga dos scripts
