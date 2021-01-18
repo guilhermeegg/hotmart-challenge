@@ -16,7 +16,7 @@ import com.hotmart.challenge.web.dto.ProdutoDTO;
 import com.hotmart.challenge.web.transform.GenericModelMapper;
 
 @RestController
-@RequestMapping("/v1/produtos")
+@RequestMapping("challege-api/v1/produtos")
 public class ProdutoController {
 
 	@Autowired
