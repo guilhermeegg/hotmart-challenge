@@ -1,5 +1,6 @@
 package com.hotmart.challenge.web.handler;
 
+import javax.persistence.EntityNotFoundException;
 import javax.validation.ConstraintViolationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +34,14 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler({ EmptyResultDataAccessException.class })
 	public ResponseEntity<Object> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex) {
-		return getStandardResponseEntity("empty.result.data.access.exception", HttpStatus.NOT_FOUND, ex);
+		return getStandardResponseEntity("result.not.found", HttpStatus.NOT_FOUND, ex);
 	}
+	
+	@ExceptionHandler({EntityNotFoundException.class })
+	public ResponseEntity<Object> handleEntityNotFoundException(EntityNotFoundException ex) {
+		return getStandardResponseEntity("result.not.found", HttpStatus.NOT_FOUND, ex);
+	}
+	
 
 	@ExceptionHandler({ ConstraintViolationException.class })
 	public ResponseEntity<Object> handleConstraintViolation(ConstraintViolationException ex) {

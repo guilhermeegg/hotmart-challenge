@@ -22,4 +22,8 @@ public class ProdutoService {
 		repository.deleteById(id);
 	}
 
+	public ProdutoEntity save(ProdutoEntity produto) {
+		return repository.save(produto);
+	}
+
 }
