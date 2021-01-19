@@ -30,8 +30,8 @@ public class ProdutoDTO implements Serializable {
 	@ApiModelProperty(position = 3, required = true, notes = "Descrição do produto")
 	private String descricao;
 
-	@ApiModelProperty(position = 4, required = true, notes = "Data da criação do produto - dd-MM-yyyy HH:mm:ss")
-	@JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+	@ApiModelProperty(position = 4, required = true, notes = "Data da criação do produto - dd/MM/yyyy")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDateTime dataCriacao;
 
 	@ApiModelProperty(position = 5, required = false, notes = "Score de classificação do produto")
