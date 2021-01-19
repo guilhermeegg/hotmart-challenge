@@ -17,13 +17,16 @@ import lombok.ToString;
 @Data
 @ToString
 @EqualsAndHashCode(of = "id")
-@ApiModel(description = "Dados da categoria")
-public class CategoriaDTO implements Serializable {
+@ApiModel(description = "Dados da categoria response")
+public class CategoriaResponseDTO implements Serializable {
 
-	private static final long serialVersionUID = 4247486026281063252L;
+	private static final long serialVersionUID = -144237564144349135L;
 
 	@ApiModelProperty(position = 1, required = true, notes = "Identificação da categoria")
 	@NotNull
 	private Long id;
+
+	@ApiModelProperty(position = 1, required = true, notes = "Nome da categoria")
+	private String nome;
 
 }
