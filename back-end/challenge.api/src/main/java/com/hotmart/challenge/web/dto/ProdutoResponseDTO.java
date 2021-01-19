@@ -17,7 +17,7 @@ import lombok.ToString;
 @Data
 @ToString
 @ApiModel(description = "Dados do produto")
-public class ProdutoDTO implements Serializable {
+public class ProdutoResponseDTO implements Serializable {
 
 	private static final long serialVersionUID = 4234351943267992177L;
 
@@ -30,8 +30,8 @@ public class ProdutoDTO implements Serializable {
 	@ApiModelProperty(position = 3, required = true, notes = "Descrição do produto")
 	private String descricao;
 
-	@ApiModelProperty(position = 4, required = true, notes = "Data da criação do produto - dd/MM/yyyy")
-	@JsonFormat(pattern = "dd/MM/yyyy")
+	@ApiModelProperty(position = 4, required = true, notes = "Data da criação do produto - yyyy-mm-dd HH:mm:ss")
+	@JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
 	private LocalDateTime dataCriacao;
 
 	@ApiModelProperty(position = 5, required = false, notes = "Score de classificação do produto")
