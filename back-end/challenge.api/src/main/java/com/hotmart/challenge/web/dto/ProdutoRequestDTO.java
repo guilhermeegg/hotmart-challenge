@@ -35,6 +35,6 @@ public class ProdutoRequestDTO implements Serializable {
 
 	@ApiModelProperty(position = 4, required = true, notes = "Categoria do produto")
 	@NotNull
-	private CategoriaDTO categoria;
+	private CategoriaRequestDTO categoria;
 
 }
