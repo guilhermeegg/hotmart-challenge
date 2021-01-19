@@ -2,6 +2,9 @@ package com.hotmart.challenge.service;
 
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +17,12 @@ public class ProdutoService {
 	@Autowired
 	private ProdutoRepository repository;
 
-	public Optional<ProdutoEntity> findById(Long id) {
-		return repository.findById(id);
+	public ProdutoEntity findById(Long id) {
+		Optional<ProdutoEntity> produto = repository.findById(id);
+		if (!produto.isPresent()) {
+			throw new EntityNotFoundException("Produto não encontrado");
+		}
+		return produto.get();
 	}
 
 	public void deleteById(Long id) {
@@ -23,6 +30,12 @@ public class ProdutoService {
 	}
 
 	public ProdutoEntity save(ProdutoEntity produto) {
+		return repository.save(produto);
+	}
+
+	public ProdutoEntity update(Long id, ProdutoEntity produtoEdit) {
+		ProdutoEntity produto = findById(id);
+		BeanUtils.copyProperties(produtoEdit, produto, "id", "score");
 		return repository.save(produto);
 	}
 
