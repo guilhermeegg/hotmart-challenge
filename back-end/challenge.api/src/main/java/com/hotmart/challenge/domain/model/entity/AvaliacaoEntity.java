@@ -5,8 +5,7 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -31,8 +30,7 @@ public class AvaliacaoEntity implements Serializable {
 	private static final long serialVersionUID = 7220194699155350740L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID")
+	@Column(name = "ID_VENDA")
 	private Long id;
 
 	@NotNull
@@ -45,9 +43,8 @@ public class AvaliacaoEntity implements Serializable {
 	@Column(name = "NOTA")
 	private Byte nota;
 
-	@NotNull
-	@OneToOne
-	@JoinColumn(name = "ID_VENDA")
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_VENDA", insertable = false, updatable = false)
 	private VendaEntity venda;
 
 }
