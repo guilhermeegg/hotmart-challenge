@@ -15,6 +15,10 @@ import com.hotmart.challenge.service.ProdutoService;
 import com.hotmart.challenge.web.dto.ProdutoDTO;
 import com.hotmart.challenge.web.transform.GenericModelMapper;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
 @RequestMapping("challege-api/v1/produtos")
 public class ProdutoController {
@@ -23,6 +27,9 @@ public class ProdutoController {
 	private ProdutoService produtoService;
 
 	@GetMapping("/{id}")
+	@ApiOperation(value = "Obter Produto por ID", response = ProdutoDTO.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Retornou Produto com sucesso"),
+			@ApiResponse(code = 404, message = "Não encontrou o Produto com base no ID pesquisado") })
 	public ResponseEntity<ProdutoDTO> findById(@PathVariable("id") Long id) {
 		Optional<ProdutoEntity> produto = produtoService.findById(id);
 		if (produto.isPresent()) {
