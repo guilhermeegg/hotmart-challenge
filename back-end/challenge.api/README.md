@@ -23,3 +23,9 @@ Optei por utilizar um banco de dados em mémoria através do H2 e o Liquibase pa
 A imagem do diagrama de entidade e relacionamento está na raiz do projeto (Diagrama_entidade_relacionamento_v1.png)
 As configurações estão no arquivo do projeto resources/application.properties
 Para acessar o console do H2 basta utilizar a url  http://<host>:<porta>/h2 -EX: http://localhost:8080/h2
+
+
+#Evolução da aplicação 
+Criar um Crud(create, read, update, delete) de produtos.
+Criar uma API de produtos e disponibilizar as operações de crud (find, delete).
+Documentação de API através do Swagger
