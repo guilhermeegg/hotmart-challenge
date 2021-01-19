@@ -17,3 +17,6 @@ databaseChangeLog:
   - include:
       file: scripts/V06_insert_tbvenda.sql
       relativeToChangelogFile: true
+  - include:
+      file: scripts/V07_insert_tbavaliacao.sql
+      relativeToChangelogFile: true
