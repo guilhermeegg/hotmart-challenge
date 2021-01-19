@@ -16,7 +16,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-@ApiModel(description = "Dados do produto")
+@ApiModel(description = "Dados do produto response")
 public class ProdutoResponseDTO implements Serializable {
 
 	private static final long serialVersionUID = 4234351943267992177L;
@@ -36,5 +36,8 @@ public class ProdutoResponseDTO implements Serializable {
 
 	@ApiModelProperty(position = 5, required = false, notes = "Score de classificação do produto")
 	private Float score;
+
+	@ApiModelProperty(position = 6, required = false, notes = "Categoria do produto")
+	private CategoriaResponseDTO categoria;
 
 }
