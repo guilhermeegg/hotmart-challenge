@@ -13,16 +13,16 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.hotmart.challenge.client.NewsClient;
+import com.hotmart.challenge.client.NoticiaClient;
 import com.hotmart.challenge.domain.model.entity.CategoriaEntity;
 import com.hotmart.challenge.repository.CategoriaRepository;
 
 @SpringBootTest
 @TestInstance(Lifecycle.PER_CLASS)
-class NewsApiIntegrationTest {
+class NoticiaIntegrationTest {
 
 	@Autowired
-	NewsClient newsClient;
+	NoticiaClient newsClient;
 
 	@Autowired
 	CategoriaRepository categoriaRepository;

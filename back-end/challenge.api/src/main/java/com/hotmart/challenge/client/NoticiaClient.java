@@ -22,7 +22,7 @@ import com.hotmart.challenge.domain.model.entity.CategoriaEntity;
  *
  */
 @Component
-public class NewsClient {
+public class NoticiaClient {
 
 	private static final String URL = "http://newsapi.org/v2/top-headlines?country={country}&category={category}";
 
@@ -43,8 +43,8 @@ public class NewsClient {
 		params.put("category", categoria.getNome());
 
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<NewsResponseDTO> responseNoticiaDTO = restTemplate.exchange(URL, HttpMethod.GET, request,
-				NewsResponseDTO.class, params);
+		ResponseEntity<NoticiaResponseDTO> responseNoticiaDTO = restTemplate.exchange(URL, HttpMethod.GET, request,
+				NoticiaResponseDTO.class, params);
 
 		if (HttpStatus.OK.equals(responseNoticiaDTO.getStatusCode())) {
 			return responseNoticiaDTO.getBody().getTotalResults();
