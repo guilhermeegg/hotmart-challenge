@@ -26,6 +26,11 @@ public class CategoriaEntity implements Serializable {
 
 	private static final long serialVersionUID = 3148371629917712255L;
 
+	public CategoriaEntity(Long id, String nome) {
+		this.id = id;
+		this.nome = nome;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
@@ -35,5 +40,8 @@ public class CategoriaEntity implements Serializable {
 	@Size(max = 100)
 	@Column(name = "NOME")
 	private String nome;
+
+	@Column(name = "QTDE_NOTICIAS")
+	private Long quantidadeNoticias;
 
 }
