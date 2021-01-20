@@ -6,6 +6,8 @@ import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.hotmart.challenge.domain.model.entity.ProdutoEntity;
@@ -37,6 +39,10 @@ public class ProdutoService {
 		ProdutoEntity produto = findById(id);
 		BeanUtils.copyProperties(produtoEdit, produto, "id", "score");
 		return repository.save(produto);
+	}
+
+	public Page<ProdutoEntity> findAll(Pageable page) {
+		return repository.findAll(page);
 	}
 
 }

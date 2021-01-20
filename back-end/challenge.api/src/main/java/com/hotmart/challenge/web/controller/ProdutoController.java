@@ -4,6 +4,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,9 +24,12 @@ import com.hotmart.challenge.web.dto.ProdutoRequestDTO;
 import com.hotmart.challenge.web.dto.ProdutoResponseDTO;
 import com.hotmart.challenge.web.transform.GenericModelMapper;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
 @RequestMapping("challege-api/v1/produtos")
@@ -39,6 +45,19 @@ public class ProdutoController {
 	public ResponseEntity<ProdutoResponseDTO> findById(@PathVariable("id") Long id) {
 		ProdutoEntity produto = produtoService.findById(id);
 		return new ResponseEntity<>(GenericModelMapper.transform(produto, ProdutoResponseDTO.class), HttpStatus.OK);
+	}
+
+	@GetMapping("/")
+	@ApiOperation(value = "Obter produtos")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Retornou os Produtos") })
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "page", dataType = "string", paramType = "query", value = "Página de resultados que você deseja recuperar (0..N). Página padrão 0"),
+			@ApiImplicitParam(name = "size", dataType = "string", paramType = "query", value = "Número de registros por página. Tamanho da página padrão 10"),
+			@ApiImplicitParam(name = "sort", allowMultiple = true, dataType = "string", paramType = "query", value = "Critérios de ordenação no formato: propriedade (asc | desc). A ordem de classificação padrão está asc.") })
+	public ResponseEntity<Page<ProdutoResponseDTO>> findAll(@ApiIgnore @PageableDefault Pageable page) {
+		Page<ProdutoResponseDTO> produtos = produtoService.findAll(page)
+				.map(produto -> GenericModelMapper.transform(produto, ProdutoResponseDTO.class));
+		return new ResponseEntity<>(produtos, HttpStatus.OK);
 	}
 
 	@PostMapping
