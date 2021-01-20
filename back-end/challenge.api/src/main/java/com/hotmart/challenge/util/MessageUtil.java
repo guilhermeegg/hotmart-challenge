@@ -15,6 +15,8 @@ public class MessageUtil {
 	private MessageSource messageSource;
 
 	public static final String PRODUTO_NAO_ENCONTRADO = "produto.nao.encontrado";
+	
+	public static final String EXECUCAO_SERVICO_NAO_ENCONTRADO = "execucao.servico.nao.encontrado";
 
 	public static final String DATA_INTEGRITY_VIOLATION = "data.integrity.violation";
 
