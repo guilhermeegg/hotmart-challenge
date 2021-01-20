@@ -20,3 +20,6 @@ databaseChangeLog:
   - include:
       file: scripts/V07_insert_tbavaliacao.sql
       relativeToChangelogFile: true
+  - include:
+      file: scripts/V08_insert_tbexecucao_servico.sql
+      relativeToChangelogFile: true
