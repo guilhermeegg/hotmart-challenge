@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Data
-public class RetornoNewsDTO implements Serializable {
+public class NewsResponseDTO implements Serializable {
 
 	private static final long serialVersionUID = -1963916411485769978L;
 

@@ -43,8 +43,8 @@ public class NewsClient {
 		params.put("category", categoria.getNome());
 
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<RetornoNewsDTO> responseNoticiaDTO = restTemplate.exchange(URL, HttpMethod.GET, request,
-				RetornoNewsDTO.class, params);
+		ResponseEntity<NewsResponseDTO> responseNoticiaDTO = restTemplate.exchange(URL, HttpMethod.GET, request,
+				NewsResponseDTO.class, params);
 
 		if (HttpStatus.OK.equals(responseNoticiaDTO.getStatusCode())) {
 			return responseNoticiaDTO.getBody().getTotalResults();
