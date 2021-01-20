@@ -4,8 +4,6 @@ import javax.persistence.EntityNotFoundException;
 import javax.validation.ConstraintViolationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpHeaders;
@@ -13,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.hotmart.challenge.util.MessageUtil;
 
 /**
  * Classe global para o tratamento de exceção
@@ -25,33 +25,32 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GlobalExceptionHandler {
 
 	@Autowired
-	private MessageSource messageSource;
+	private MessageUtil messageUtil;
 
 	@ExceptionHandler(DataIntegrityViolationException.class)
 	public ResponseEntity<Object> handleDataIntegrityViolationException(DataIntegrityViolationException ex) {
-		return getStandardResponseEntity("data.integrity.violation", HttpStatus.PRECONDITION_FAILED, ex);
+		return getStandardResponseEntity(MessageUtil.DATA_INTEGRITY_VIOLATION, HttpStatus.PRECONDITION_FAILED, ex);
 	}
 
 	@ExceptionHandler({ EmptyResultDataAccessException.class })
 	public ResponseEntity<Object> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex) {
-		return getStandardResponseEntity("result.not.found", HttpStatus.NOT_FOUND, ex);
+		return getStandardResponseEntity(MessageUtil.RESULT_NOT_FOUND, HttpStatus.NOT_FOUND, ex);
 	}
-	
-	@ExceptionHandler({EntityNotFoundException.class })
+
+	@ExceptionHandler({ EntityNotFoundException.class })
 	public ResponseEntity<Object> handleEntityNotFoundException(EntityNotFoundException ex) {
-		return getStandardResponseEntity("result.not.found", HttpStatus.NOT_FOUND, ex);
+		return getStandardResponseEntity(MessageUtil.RESULT_NOT_FOUND, HttpStatus.NOT_FOUND, ex);
 	}
-	
 
 	@ExceptionHandler({ ConstraintViolationException.class })
 	public ResponseEntity<Object> handleConstraintViolation(ConstraintViolationException ex) {
-		return getStandardResponseEntity("constraint.violation.exception", HttpStatus.BAD_REQUEST, ex);
+		return getStandardResponseEntity(MessageUtil.CONSTRAINT_VIOLATION_EXCEPTION, HttpStatus.BAD_REQUEST, ex);
 	}
 
 	private ResponseEntity<Object> getStandardResponseEntity(String textoMensagem, HttpStatus httpStatus,
 			Exception ex) {
-		String mensagem = messageSource.getMessage(textoMensagem, null, LocaleContextHolder.getLocale());
-		Error error = new Error(ex.getLocalizedMessage(), mensagem);
+		String mensagem = messageUtil.getMessage(textoMensagem);
+		Error error = new Error(mensagem, ex.getLocalizedMessage());
 		return new ResponseEntity<>(error, new HttpHeaders(), httpStatus);
 	}
 

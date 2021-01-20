@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hotmart.challenge.domain.model.entity.ProdutoEntity;
 import com.hotmart.challenge.service.ProdutoService;
+import com.hotmart.challenge.util.MessageUtil;
 import com.hotmart.challenge.web.dto.ProdutoRequestDTO;
 import com.hotmart.challenge.web.dto.ProdutoResponseDTO;
 import com.hotmart.challenge.web.transform.GenericModelMapper;
@@ -37,6 +38,9 @@ public class ProdutoController {
 
 	@Autowired
 	private ProdutoService produtoService;
+
+	@Autowired
+	private MessageUtil messageUtil;
 
 	@GetMapping("/{id}")
 	@ApiOperation(value = "Obter Produto por ID", response = ProdutoResponseDTO.class)

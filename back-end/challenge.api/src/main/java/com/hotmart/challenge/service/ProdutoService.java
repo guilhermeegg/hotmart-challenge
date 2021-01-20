@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.hotmart.challenge.domain.model.entity.ProdutoEntity;
 import com.hotmart.challenge.repository.ProdutoRepository;
+import com.hotmart.challenge.util.MessageUtil;
 
 @Service
 public class ProdutoService {
@@ -19,10 +20,13 @@ public class ProdutoService {
 	@Autowired
 	private ProdutoRepository repository;
 
+	@Autowired
+	private MessageUtil messageUtil;
+
 	public ProdutoEntity findById(Long id) {
 		Optional<ProdutoEntity> produto = repository.findById(id);
 		if (!produto.isPresent()) {
-			throw new EntityNotFoundException("Produto não encontrado");
+			throw new EntityNotFoundException(messageUtil.getMessage(MessageUtil.PRODUTO_NAO_ENCONTRADO));
 		}
 		return produto.get();
 	}
