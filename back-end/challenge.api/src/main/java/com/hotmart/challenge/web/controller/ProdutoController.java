@@ -59,6 +59,9 @@ public class ProdutoController {
 			@ApiImplicitParam(name = "size", dataType = "string", paramType = "query", value = "Número de registros por página. Tamanho da página padrão 10"),
 			@ApiImplicitParam(name = "sort", allowMultiple = true, dataType = "string", paramType = "query", value = "Critérios de ordenação no formato: propriedade (asc | desc). A ordem de classificação padrão está asc.") })
 	public ResponseEntity<Page<ProdutoResponseDTO>> findAll(@ApiIgnore @PageableDefault Pageable page) {
+		if (page.getPageSize() > 20) {
+			throw new IllegalArgumentException(messageUtil.getMessage(MessageUtil.TAMANHO_LIMITE_PAGINACAO));
+		}
 		Page<ProdutoResponseDTO> produtos = produtoService.findAll(page)
 				.map(produto -> GenericModelMapper.transform(produto, ProdutoResponseDTO.class));
 		return new ResponseEntity<>(produtos, HttpStatus.OK);

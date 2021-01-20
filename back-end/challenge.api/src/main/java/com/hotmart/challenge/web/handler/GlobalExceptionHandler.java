@@ -47,6 +47,12 @@ public class GlobalExceptionHandler {
 		return getStandardResponseEntity(MessageUtil.CONSTRAINT_VIOLATION_EXCEPTION, HttpStatus.BAD_REQUEST, ex);
 	}
 
+	@ExceptionHandler({ IllegalArgumentException.class })
+	public ResponseEntity<Object> handleIllegalArgumentException(IllegalArgumentException ex) {
+		Error error = new Error(ex.toString(), ex.getLocalizedMessage());
+		return new ResponseEntity<>(error, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+	}
+
 	private ResponseEntity<Object> getStandardResponseEntity(String textoMensagem, HttpStatus httpStatus,
 			Exception ex) {
 		String mensagem = messageUtil.getMessage(textoMensagem);
