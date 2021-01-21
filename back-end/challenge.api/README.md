@@ -32,3 +32,21 @@ Documentação de API através do Swagger
 Buscar e armazenar a quantidade de notícias por categoria (JOB) - ServicoQuantidadeNoticiasScheduled (Executado se necessário e de 6 em 6 horas) 
 Calcular e armazenar o score dos produtos (JOB) - ServicoScoreProdutoScheduled (Executado após o start da aplicação e de hora em hora)
 Criar uma API para retornar o ranqueamento dos produtos
+
+
+## como rodar o código
+
+1. Clonar o repositório git
+https://github.com/guilhermeegg/hotmart-challenge.git
+
+2. Instalar as dependências do projeto
+mvn clean install
+
+3. Pelo IDE (Eclipse) basta executar a classe:
+ChallengeApiApplication.java
+
+Também pode empacotar o aplicativo
+	3.1 Gerar o pacote mvn package
+	3.2 Executar java –jar ../target/challenge-api-1.0.0-SNAPSHOT.jar
+
+
