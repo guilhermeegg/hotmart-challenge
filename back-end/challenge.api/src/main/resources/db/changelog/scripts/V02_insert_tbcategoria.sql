@@ -5,5 +5,5 @@ insert into TBCATEGORIA(ID, NOME) values(4,'health');
 insert into TBCATEGORIA(ID, NOME) values(5,'science');
 insert into TBCATEGORIA(ID, NOME) values(6,'sports');
 insert into TBCATEGORIA(ID, NOME) values(7,'technology');
-
+insert into TBCATEGORIA(ID, NOME) values(8,'foods');
 

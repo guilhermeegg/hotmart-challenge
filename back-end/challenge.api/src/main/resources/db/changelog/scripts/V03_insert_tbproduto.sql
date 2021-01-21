@@ -98,3 +98,4 @@ insert into TBPRODUTO(ID, NOME, DESCRICAO, DT_CRIACAO, SCORE, ID_CATEGORIA) Valu
 insert into TBPRODUTO(ID, NOME, DESCRICAO, DT_CRIACAO, SCORE, ID_CATEGORIA) Values(98,'Produto 98','Descrição Produto 98','2018-04-08',null,7);
 insert into TBPRODUTO(ID, NOME, DESCRICAO, DT_CRIACAO, SCORE, ID_CATEGORIA) Values(99,'Produto 99','Descrição Produto 99','2018-04-09',null,7);
 insert into TBPRODUTO(ID, NOME, DESCRICAO, DT_CRIACAO, SCORE, ID_CATEGORIA) Values(100,'Produto 100','Descrição Produto 100','2018-04-10',null,7);
+insert into TBPRODUTO(ID, NOME, DESCRICAO, DT_CRIACAO, SCORE, ID_CATEGORIA) Values(101,'Produto 101','Descrição Produto 101','2021-01-21',null,8);
