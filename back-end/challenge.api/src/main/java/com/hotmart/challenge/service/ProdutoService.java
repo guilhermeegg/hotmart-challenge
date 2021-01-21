@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,6 +26,7 @@ import com.hotmart.challenge.repository.VendaRepository;
 import com.hotmart.challenge.util.MessageUtil;
 
 @Service
+@EnableAsync
 public class ProdutoService {
 
 	@Autowired
@@ -82,24 +84,28 @@ public class ProdutoService {
 	 */
 	@Transactional
 	public void armazenarScore() {
-		if (execucaoServico.isPrecisaExecuar(ServicoEnum.ARMAZENAR_QTDE_NOTICIAS)) {
-			categoriaService.armazenarQuantidadeNoticias();
-		}
-
-		Map<Long, CategoriaEntity> mapCategorias = categoriaService.findAll().stream()
-				.collect(Collectors.toMap(CategoriaEntity::getId, categoria -> categoria));
-
 		List<ProdutoEntity> produtos = produtoRepository.findAll();
 
-		LocalDateTime dataUltimo12Meses = LocalDateTime.now().plusMonths(-12);
-		LocalDateTime dataAtual = LocalDateTime.now();
+		if (!produtos.isEmpty()) {
 
-		for (ProdutoEntity produto : produtos) {
-			produto.setScore(getScoreProduto(mapCategorias, dataUltimo12Meses, dataAtual, produto));
-			produtoRepository.save(produto);
+			if (execucaoServico.isPrecisaExecuar(ServicoEnum.ARMAZENAR_QTDE_NOTICIAS)) {
+				categoriaService.armazenarQuantidadeNoticias();
+			}
+
+			Map<Long, CategoriaEntity> mapCategorias = categoriaService.findAll().stream()
+					.collect(Collectors.toMap(CategoriaEntity::getId, categoria -> categoria));
+
+			LocalDateTime dataUltimo12Meses = LocalDateTime.now().plusMonths(-12);
+			LocalDateTime dataAtual = LocalDateTime.now();
+
+			for (ProdutoEntity produto : produtos) {
+				produto.setScore(getScoreProduto(mapCategorias, dataUltimo12Meses, dataAtual, produto));
+				produtoRepository.save(produto);
+			}
+
+			execucaoServico.updateDataUltimaExecucao(ServicoEnum.ARMAZENAR_SCORE_PRODUTO);
+
 		}
-
-		execucaoServico.updateDataUltimaExecucao(ServicoEnum.ARMAZENAR_SCORE_PRODUTO);
 
 	}
 
@@ -128,6 +134,17 @@ public class ProdutoService {
 		quantidadeNoticias = quantidadeNoticias != null ? quantidadeNoticias : 0;
 
 		return mediaAvaliacao + mediaVendas + quantidadeNoticias;
+	}
+
+	/**
+	 * Busca todos os produtos ordenados pelo ranqueamento, pelo nome do produto e
+	 * pelo nome da categoria.
+	 * 
+	 * @param page
+	 * @return
+	 */
+	public Page<ProdutoEntity> findAllOrderByRank(Pageable page) {
+		return produtoRepository.findAllOrderByRank(page);
 	}
 
 }

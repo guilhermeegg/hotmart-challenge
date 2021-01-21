@@ -20,7 +20,7 @@ Para acessar o Swagger basta utilizar a url  http://<host>:<porta>/swagger-ui.ht
 
 ## Banco de dados
 Optei por utilizar um banco de dados em mémoria através do H2 e o Liquibase para controle de versão e carga dos scripts
-A imagem do diagrama de entidade e relacionamento está na raiz do projeto (Diagrama_entidade_relacionamento_v1.png)
+A imagem do diagrama de entidade e relacionamento está na raiz do projeto (Diagrama_entidade_relacionamento_v3.png)
 As configurações estão no arquivo do projeto resources/application.properties
 Para acessar o console do H2 basta utilizar a url  http://<host>:<porta>/h2 -EX: http://localhost:8080/h2
 
@@ -29,5 +29,6 @@ Para acessar o console do H2 basta utilizar a url  http://<host>:<porta>/h2 -EX:
 Criar um Crud(create, read, update, delete) de produtos.
 Criar uma API de produtos e disponibilizar as operações de crud (find, delete, insert, update, list).
 Documentação de API através do Swagger
-Buscar e armazenar a quantidade de notícias por categoria (JOB)
-Calcular e armazenar o score dos produtos (JOB) 
+Buscar e armazenar a quantidade de notícias por categoria (JOB) - ServicoQuantidadeNoticiasScheduled (Executado se necessário e de 6 em 6 horas) 
+Calcular e armazenar o score dos produtos (JOB) - ServicoScoreProdutoScheduled (Executado após o start da aplicação e de hora em hora)
+Criar uma API para retornar o ranqueamento dos produtos
