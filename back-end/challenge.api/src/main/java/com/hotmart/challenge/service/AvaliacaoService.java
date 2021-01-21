@@ -24,11 +24,11 @@ public class AvaliacaoService {
 	 * @param dataFim
 	 * @return
 	 */
-	public Double getMediaAvaliacoesPorProduto(ProdutoEntity produto, LocalDateTime dataInicio, LocalDateTime dataFim) {
+	public Float getMediaAvaliacoesPorProduto(ProdutoEntity produto, LocalDateTime dataInicio, LocalDateTime dataFim) {
 		List<AvaliacaoEntity> avaliacoes = avaliacaoRepository.findAllNoPeriodoPorProduto(produto, dataInicio, dataFim);
 		long quantidade = avaliacoes.size();
 		long notaTotal = avaliacoes.stream().mapToInt(AvaliacaoEntity::getNota).sum();
-		return (double) notaTotal / quantidade;
+		return quantidade > 0 ? (float) notaTotal / quantidade : 0;
 	}
 
 }
