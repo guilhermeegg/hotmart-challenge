@@ -38,4 +38,8 @@ public class CategoriaService {
 		execucaoServicoService.updateDataUltimaExecucao(ServicoEnum.ARMAZENAR_QTDE_NOTICIAS);
 	}
 
+	public List<CategoriaEntity> findAll() {
+		return categoriaRepository.findAll();
+	}
+
 }
