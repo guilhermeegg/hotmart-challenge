@@ -60,10 +60,10 @@ public class ProdutoController {
 			@ApiResponse(code = 404, message = "Não encontrou os produtos"),
 			@ApiResponse(code = 400, message = "Erro na requisição do cliente") })
 	@ApiImplicitParams({
-			@ApiImplicitParam(name = "page", dataType = "string", paramType = "query", value = "Página de resultados que você deseja recuperar (0..N)."),
-			@ApiImplicitParam(name = "size", dataType = "string", paramType = "query", value = "Número de registros por página. Tamanho máximo de 20"), })
-	public ResponseEntity<Page<ProdutoResponseDTO>> findAll(@RequestParam("page") int page,
-			@RequestParam("size") int size) {
+			@ApiImplicitParam(name = "page", dataType = "string", paramType = "query", value = "Página de resultados que você deseja recuperar (0..N). Valor default 0"),
+			@ApiImplicitParam(name = "size", dataType = "string", paramType = "query", value = "Número de registros por página. Tamanho máximo de 20. Valor default 10") })
+	public ResponseEntity<Page<ProdutoResponseDTO>> findAll(@RequestParam(value = "page", defaultValue = "0") int page,
+			@RequestParam(value = "size", defaultValue = "10") int size) {
 		validarTramanhoMaximoPagina(size);
 		Page<ProdutoResponseDTO> produtos = produtoService.findAll(PageRequest.of(page, size))
 				.map(produto -> GenericModelMapper.transform(produto, ProdutoResponseDTO.class));
@@ -76,10 +76,11 @@ public class ProdutoController {
 			@ApiResponse(code = 404, message = "Não encontrou os produtos"),
 			@ApiResponse(code = 400, message = "Erro na requisição do cliente") })
 	@ApiImplicitParams({
-			@ApiImplicitParam(name = "page", dataType = "string", paramType = "query", value = "Página de resultados que você deseja recuperar (0..N)."),
-			@ApiImplicitParam(name = "size", dataType = "string", paramType = "query", value = "Número de registros por página. Tamanho máximo de 20") })
-	public ResponseEntity<ProdutoRankResponseDTO> findAllOrderByRank(@RequestParam("page") int page,
-			@RequestParam("size") int size) {
+			@ApiImplicitParam(name = "page", dataType = "string", paramType = "query", value = "Página de resultados que você deseja recuperar (0..N). Valor default 0"),
+			@ApiImplicitParam(name = "size", dataType = "string", paramType = "query", value = "Número de registros por página. Tamanho máximo de 20. Valor default 10") })
+	public ResponseEntity<ProdutoRankResponseDTO> findAllOrderByRank(
+			@RequestParam(value = "page", defaultValue = "0") int page,
+			@RequestParam(value = "size", defaultValue = "10") int size) {
 		validarTramanhoMaximoPagina(size);
 		Page<ProdutoResponseDTO> produtos = produtoService.findAllOrderByRank(PageRequest.of(page, size))
 				.map(produto -> GenericModelMapper.transform(produto, ProdutoResponseDTO.class));
