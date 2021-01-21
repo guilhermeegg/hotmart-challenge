@@ -29,3 +29,5 @@ Para acessar o console do H2 basta utilizar a url  http://<host>:<porta>/h2 -EX:
 Criar um Crud(create, read, update, delete) de produtos.
 Criar uma API de produtos e disponibilizar as operações de crud (find, delete, insert, update, list).
 Documentação de API através do Swagger
+Buscar e armazenar a quantidade de notícias por categoria (JOB)
+Calcular e armazenar o score dos produtos (JOB) 
