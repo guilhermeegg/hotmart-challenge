@@ -3,10 +3,12 @@
 ## Descrição da aplicação 
 	-API de produto para as operações de crud (list, find, delete, update, insert).
 	-Serviço e API para buscar os produtos ranqueados.
-	-Documentação das APIs através do Swagger
-	-Scheduler para buscar e armazenar a quantidade de notícias por categoria - ServicoQuantidadeNoticiasScheduled (Executado se necessário e de 6 em 6 horas) 
-	-Scheduler para buscar e armazenar o score dos produtos - ServicoScoreProdutoScheduled (Execução imediata após o start da aplicação e de hora em hora)
-	-Auditoria e Paginação
+	-Documentação das APIs através do Swagger.
+	-Scheduler para buscar e armazenar a quantidade de notícias por categoria. 
+		- ServicoQuantidadeNoticiasScheduled (Executado se necessário e de 6 em 6 horas) 
+	-Scheduler para buscar e armazenar o score dos produtos. 
+		- ServicoScoreProdutoScheduled (Execução imediata após o start da aplicação e de hora em hora)
+	-Auditoria e Paginação.
 
 
 ## Tecnologias Utilizadas
@@ -35,7 +37,7 @@
 
 
 
-## como rodar o projeto
+## Como rodar o projeto
 
 1) Clonar o repositório git https://github.com/guilhermeegg/hotmart-challenge.git
 
