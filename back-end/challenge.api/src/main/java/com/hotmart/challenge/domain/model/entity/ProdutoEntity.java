@@ -16,6 +16,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.envers.AuditTable;
 import org.hibernate.envers.Audited;
+import org.hibernate.envers.RelationTargetAuditMode;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -59,6 +60,7 @@ public class ProdutoEntity implements Serializable {
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "ID_CATEGORIA")
+	@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
 	private CategoriaEntity categoria;
 
 }
