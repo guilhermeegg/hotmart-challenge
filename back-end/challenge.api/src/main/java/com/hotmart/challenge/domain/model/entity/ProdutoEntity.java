@@ -14,17 +14,22 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.envers.AuditTable;
+import org.hibernate.envers.Audited;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+@Audited
 @Entity
 @Table(name = "TBPRODUTO")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+@AuditTable(value = "TBPRODUTO_AUDIT")
 public class ProdutoEntity implements Serializable {
 
 	private static final long serialVersionUID = 7975396979258117137L;
