@@ -1,6 +1,6 @@
 # Hotmart Challenge API Backend
 
-##Descrição da aplicação 
+## Descrição da aplicação 
 	-API de produto para as operações de crud (list, find, delete, update, insert).
 	-Serviço e API para buscar os produtos ranqueados.
 	-Documentação das APIs através do Swagger
@@ -46,5 +46,5 @@
 		3.1.1 Gerar o pacote mvn package
 		3.1.2 Executar java –jar ../target/challenge-api-1.0.0-SNAPSHOT.jar
 
-
-4) Os serviços estão documentados no Swagger http://localhost:8080/swagger-ui.html - Exemplo de endpoint: GET http://localhost:8080/challege-api/v1/produtos/1
+4) Os serviços estão documentados no Swagger http://localhost:8080/swagger-ui.html 
+   Exemplo de endpoint: GET http://localhost:8080/challege-api/v1/produtos/1
